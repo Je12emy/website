@@ -7,12 +7,9 @@ import (
 
 func main() {
 	mux := http.NewServeMux()
-	fs := http.FileServer(http.Dir("./static"))
+	fs := http.FileServer(http.Dir("./public"))
+	// mux.Handle("/public", http.StripPrefix("/public/", fs))
 	mux.Handle("/", fs)
-	mux.HandleFunc("GET /hello", func(w http.ResponseWriter, r *http.Request) {
-		log.Print(r.URL)
-		w.Write([]byte("Hello World"))
-	})
-	log.Print("Listing on port :8080")
+	log.Print("Listening on port :8080")
 	http.ListenAndServe(":8080", mux)
 }

@@ -1,0 +1,78 @@
+:root {
+  --background-color: #171717;
+  --accent-color: #8dbbf6;
+  --foreground-color: #f3f3f3;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Orbitron", sans-serif;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.accent {
+  color: var(--accent-color);
+}
+
+.landing {
+  display: grid;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-row: span 3;
+}
+
+.header > * + * {
+  padding-top: 1.5rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+}
+
+.header h2 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.full-screen {
+  min-height: 100svh;
+}
+
+.about-me {
+  align-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 1rem;
+  line-height: 2rem;
+  display: grid;
+  gap: 2;
+}
+
+.about-me h1 {
+  margin-bottom: 1rem;
+}
