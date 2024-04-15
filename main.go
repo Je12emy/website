@@ -1,8 +1,8 @@
 package main
 
 import (
-	"net/http"
 	"log"
+	"net/http"
 )
 
 func main() {
@@ -11,5 +11,8 @@ func main() {
 	// mux.Handle("/public", http.StripPrefix("/public/", fs))
 	mux.Handle("/", fs)
 	log.Print("Listening on port :8080")
-	http.ListenAndServe(":8080", mux)
+	err := http.ListenAndServe(":8080", mux)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
